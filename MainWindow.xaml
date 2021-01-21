@@ -1,0 +1,71 @@
+﻿<Window x:Class="RecieptGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecieptGenerator"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="RecieptGenerator" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.501,0.524">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "335" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Margin="0,0,0,0" TextWrapping="Wrap" Text="Receipt Generator By Ayush Solanki" VerticalAlignment="Center" FontSize="24" HorizontalAlignment="Center"/>
+        <Button x:Name="btnClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="2" Width="75" VerticalAlignment="Center" FontSize="17" Padding="15,5" Background="#FFFFC40D" Foreground="#FF2B5797" FontWeight="Bold" BorderThickness="0" Click="btnClear_Click"/>
+        <Button x:Name="btnGenerate" Content="Generate" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Row="2" VerticalAlignment="Center" Width="Auto" Padding="20,5" Background="#FF2B5797" Foreground="#FFFFC40D" FontWeight="Bold" FontSize="17" BorderThickness="0" BorderBrush="#00707070" Click="btnGenerate_Click"/>
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "2*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "*" />
+                <RowDefinition Height = "2*" />
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="dataGridItems" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2" />
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" TextWrapping="Wrap" Text="Customer Name" VerticalAlignment="Center" FontSize="14" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Text="Customer Mobile" VerticalAlignment="Center" FontSize="14" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+                <TextBox x:Name="txtMobile" Grid.Column="1" HorizontalAlignment="Center" Height="23"  Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="txtName" Grid.Column="1" HorizontalAlignment="Center" Height="23" Grid.Row="0"  TextWrapping="Wrap" VerticalAlignment="Center" Width="120" VerticalContentAlignment="Center" FontSize="14"/>
+            </Grid>
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddItem" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add Item" BorderBrush="#00707070" FontSize="20" Background="#FF00ABA9" Foreground="#FF1D1D1D" FontWeight="Bold" Padding="25,5" Click="btnAddItem_Click"/>
+                <TextBlock Grid.Row="0" Text="Item" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="Price" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Text="Quantity" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="txtItem" Grid.Row="0" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,25,0"/>
+                <TextBox x:Name="txtPrice" Grid.Row="1" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,25,0"/>
+                <TextBox x:Name="txtQuantity" Grid.Row="2" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,25,0"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+
+</Window>

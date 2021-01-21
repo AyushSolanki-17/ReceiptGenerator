@@ -1,0 +1,109 @@
+﻿<html>
+<head>
+    <style>
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+
+        .heading {
+            font-size: 75px;
+            text-align: center;
+        }
+
+        .lefttable {
+            width: 75%;
+            float: left;
+        }
+
+        .righttable {
+            float: left;
+        }
+
+        .ltd {
+            width: 50%;
+            font-size: 25px;
+        }
+
+        .userdet {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .malldet {
+            font-size: 25px;
+        }
+
+        .menuheader {
+            border: 1px solid black;
+            padding: 15px;
+            font-size: 35px;
+            background-color: lightblue;
+        }
+            .menuheader td {
+                border: 1px solid black;
+            }
+
+        .billtable {
+            width: 75%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .itemboxes {
+            border: 1px solid black;
+        }
+            .itemboxes td {
+                border: 1px solid black;
+                padding: 10px;
+                font-size: 25px;
+            }
+    </style>
+</head>
+<body background="green">
+    <h1 class="heading">Ayush Mall</h1>
+    <table style="width: 100%" border="0">
+        <tr style="width: 100%;">
+            <td style="width: 75%;">
+                <div class="lefttable">
+                    <table>
+                        <tr><td class="ltd">Customer Name:</td><td class="userdet">@CustomerName</td></tr>
+                        <tr><td class="ltd">Customer Mobile:</td><td class="userdet">@CustomerMobile</td></tr>
+                        <tr><td class="ltd">Date:</td><td class="userdet">@Date</td></tr>
+                        <tr><td class="ltd">Total Amount:</td><td class="userdet">Rs. @Amount</td></tr>
+                    </table>
+                </div>
+            </td>
+            <td style="width: 25%;">
+                <div class="righttable malldet">
+                    opposite A.B.C Camps,
+                    <br>
+                    Xyz road, New World.
+                    <br>
+                    contact: 98989898
+                </div>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <br>
+    <center>
+        <table class="billtable" border="0">
+            <tr class="menuheader">
+                <td>Sr no.</td>
+                <td>Item</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Amount</td>
+            </tr>
+            @BillBody
+            <tr class="itemboxes">
+                <td colspan="3">Total</td>
+                <td>@TotalItems</td>
+                <td>@Amount</td>
+            </tr>
+        </table>
+    </center>
+
+</body>
+</html>
